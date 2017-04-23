@@ -78,8 +78,8 @@ END:DAYLIGHT" | Out-File -FilePath $OutputPath -Append -Encoding default
 "BEGIN:VEVENT
 UID:201704170T172345Z-AF23B2@psconf.eu
 DTSTAMP:201704170T172345Z
-DTSTART;TZID=""Romance Standard Time"":$DTStart
-DTEND;TZID=""Romance Standard Time"":$DTEnd
+DTSTART:$DTStart
+DTEND:$DTEnd
 SEQUENCE:1
 SUMMARY:$Summary
 LOCATION:$Location
