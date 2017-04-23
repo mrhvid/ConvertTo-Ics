@@ -1,0 +1,61 @@
+BEGIN:VCALENDAR
+PRODID:-//Microsoft Corporation//Outlook 16.0 MIMEDIR//EN
+VERSION:2.0
+METHOD:PUBLISH
+X-MS-OLK-FORCEINSPECTOROPEN:TRUE
+BEGIN:VTIMEZONE
+TZID:Romance Standard Time
+BEGIN:STANDARD
+DTSTART:16011028T030000
+RRULE:FREQ=YEARLY;BYDAY=-1SU;BYMONTH=10
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:16010325T020000
+RRULE:FREQ=YEARLY;BYDAY=-1SU;BYMONTH=3
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+CLASS:PUBLIC
+CREATED:20170417T151856Z
+DESCRIPTION:Written a ton of awesome PowerShell scripts but find it hard ge
+	tting your end users or your support people to use them? Let's solve this 
+	with ChatOps. We will have a quick introduction to ChatOps and then dive i
+	nto installing a Hubot (a chat bot) on Windows. After learning the basics 
+	of Hubot\, we will run through some code examples so you can easily bring 
+	your scripts to users through chat. Finally we will touch on what security
+	 and authentication methods you can use when getting into ChatOps with Pow
+	erShell.
+DTEND;TZID="Romance Standard Time":20170505T161500
+DTSTAMP:19970610T172345Z
+DTSTART;TZID="Romance Standard Time":20170505T151500
+LAST-MODIFIED:20170417T151856Z
+LOCATION:12+14
+PRIORITY:5
+SEQUENCE:1
+SUMMARY;LANGUAGE=en-us:ChatOps with PowerShell - Matthew Hodgkins
+TRANSP:OPAQUE
+UID:19970610T172345Z-AF23B2@example.com
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//E
+	N">\n<HTML>\n<HEAD>\n<META NAME="Generator" CONTENT="MS Exchange Server ve
+	rsion rmj.rmm.rup.rpr">\n<TITLE></TITLE>\n</HEAD>\n<BODY>\n<!-- Converted 
+	from text/plain format -->\n\n<P><FONT SIZE=2>Written a ton of awesome Pow
+	erShell scripts but find it hard getting your end users or your support pe
+	ople to use them? Let's solve this with ChatOps. We will have a quick intr
+	oduction to ChatOps and then dive into installing a Hubot (a chat bot) on 
+	Windows. After learning the basics of Hubot\, we will run through some cod
+	e examples so you can easily bring your scripts to users through chat. Fin
+	ally we will touch on what security and authentication methods you can use
+	 when getting into ChatOps with PowerShell.</FONT></P>\n\n</BODY>\n</HTML>
+X-MICROSOFT-CDO-BUSYSTATUS:BUSY
+X-MICROSOFT-CDO-IMPORTANCE:1
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+END:VCALENDAR
