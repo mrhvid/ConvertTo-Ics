@@ -1,23 +1,9 @@
 BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//PowerShell/handcal//NONSGML v1.0//EN
-BEGIN:VTIMEZONE
-TZID:Romance Standard Time
-BEGIN:STANDARD
-DTSTART:20170502T080000
-RRULE:FREQ=YEARLY;BYDAY=-1SU;BYMONTH=10
-TZOFFSETFROM:+0200
-TZOFFSETTO:+0100
-END:STANDARD
-BEGIN:DAYLIGHT
-DTSTART:16010325T020000
-RRULE:FREQ=YEARLY;BYDAY=-1SU;BYMONTH=3
-TZOFFSETFROM:+0100
-TZOFFSETTO:+0200
-END:DAYLIGHT
 BEGIN:VEVENT
 UID:201704170T172345Z-AF23B2@psconf.eu
-DTSTAMP:201704170T172345Z
+DTSTAMP:201704170T172345
 DTSTART:20170502T080000
 DTEND:20170502T090000
 SEQUENCE:1
@@ -32,7 +18,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:201704170T172345Z-AF23B2@psconf.eu
-DTSTAMP:201704170T172345Z
+DTSTAMP:201704170T172345
 DTSTART:20170502T090000
 DTEND:20170502T120000
 SEQUENCE:1
@@ -47,13 +33,193 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:201704170T172345Z-AF23B2@psconf.eu
-DTSTAMP:201704170T172345Z
+DTSTAMP:201704170T172345
 DTSTART:20170502T090000
 DTEND:20170502T120000
 SEQUENCE:1
 SUMMARY:PowerShell Remoting
 LOCATION:11+13
 DESCRIPTION:In this workshop, Aleksandar reviews the different ways of how to access remote systems via PowerShell. He'll be talking about PowerShell Remoting and its prerequisites, PowerShell Direct, and also PowerShell over SSH. This workshop helps you evaluate the different options of remote communications, polishes your fundamental knowledge, and brings you up to speed for cross-platform remote communications in the light of 'PowerShell on Linux'.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:201704170T172345Z-AF23B2@psconf.eu
+DTSTAMP:201704170T172345
+DTSTART:20170502T090000
+DTEND:20170502T120000
+SEQUENCE:1
+SUMMARY:PowerShell Security Einführung
+LOCATION:25
+DESCRIPTION:Was sind überhaupt die Security Basics im Powershell? Können Sie alle wichtigen Themen benennen? Kennen Sie alle Features und Funktionen, die in der aktuellsten Powershell-Version enthalten sind? Viele der Vorträge der Hauptkonferenz drehen sich um Security. In diesem Workshop haben Sie die Gelegenheit, die Grundprinzipien noch einmal zu  verinnerlichen. Powershell Remoting, JEA und Execution Policies sind nur die wichtigsten Themen – doch spätestens, wenn es um die Konfiguration dieser Themen geht, sind viele überfragt. In dieser Session werden die wichtigsten Themen komplett erklärt und beleuchtet –zusätzliche hat David für das zentralisierte Logging ein ganz besonderes Schmankerl parat.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:201704170T172345Z-AF23B2@psconf.eu
+DTSTAMP:201704170T172345
+DTSTART:20170502T090000
+DTEND:20170502T120000
+SEQUENCE:1
+SUMMARY:Nanoserver und Container
+LOCATION:12+14
+DESCRIPTION:Mit dem Nano-Server bietet Microsoft erstmals einen vollkommen 'headless' Server an, der ohne GUI nur noch über Konsolen wie PowerShell steuerbar ist. Lernen Sie in diesem Workshop kennen, was genau Nano-Server bieten, und wie sie von Powershell aus verwaltet werden, und bereiten Sie sich damit auf die Automations-Tracks der Hauptkonfernz vor. Rinon demonstriert außerdem, was es mit 'Containern' auf sich hat, ein weiterer Baustein für die Automation.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:201704170T172345Z-AF23B2@psconf.eu
+DTSTAMP:201704170T172345
+DTSTART:20170502T120000
+DTEND:20170502T130000
+SEQUENCE:1
+SUMMARY:Lunch
+LOCATION:Lunch Areas
+DESCRIPTION:Lunch
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:201704170T172345Z-AF23B2@psconf.eu
+DTSTAMP:201704170T172345
+DTSTART:20170502T130000
+DTEND:20170502T160000
+SEQUENCE:1
+SUMMARY:Writing world-class DSC resource modules
+LOCATION:24+26
+DESCRIPTION:PowerShell DSC uses the concept of DSC resource modules and the resource modules can be written as simple PowerShell modules. This workshop looks at building world-class DSC resource modules that follow the High-Quality Resource Module guidance prescribed by Microsoft. At the end of this workshop, attendees will have a good understanding of building custom DSC resource modules that adhere to the HQRM guidelines.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:201704170T172345Z-AF23B2@psconf.eu
+DTSTAMP:201704170T172345
+DTSTART:20170502T130000
+DTEND:20170502T160000
+SEQUENCE:1
+SUMMARY:JEA and Security
+LOCATION:11+13
+DESCRIPTION:Security is one of the premier topics in the main conference, and PowerrShell introduces with JEA (Just Enough Admin) a new approach how to safely manage role-based permissions. Join Aleksandar to find your way into JEA, and prepare yourself for the security tracks waiting for you in the main conference.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:201704170T172345Z-AF23B2@psconf.eu
+DTSTAMP:201704170T172345
+DTSTART:20170502T130000
+DTEND:20170502T160000
+SEQUENCE:1
+SUMMARY:GUIs und Toolmaking mit PowerShell
+LOCATION:25
+DESCRIPTION:PowerShell ist zwar eine Automationssprache ohne GUI, wird aber zunehmend auch als Application Development Sprache eingesetzt, mit der man mit kleinem Aufwand hilfreiche Helpdesk-Tools oder Dashboards erstellen kann. David zeigt in diesem Workshop, welche Möglichkeiten Sie haben, PowerShell mit GUIs zu versehen. Dabei wird insbesondere zwischen den Technologien 'Windows Forms' und 'WPF' differenziert, um den Teilnehmern mit einer Fülle an Demos / Tools / Tipps und Tricks das Thema so nah zu bringen, dass Sie nach dem Workshop direkt loslegen können. Mit diesem Wissen können Sie die zahlreichen Inhalte der Hauptkonferenz in eigenen kleinen Anwendungen 'verpacken' und ihren Mitarbeitern bereitstellen - auf Wunsch sogar als ausführbare EXE-Anwendung
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:201704170T172345Z-AF23B2@psconf.eu
+DTSTAMP:201704170T172345
+DTSTART:20170502T130000
+DTEND:20170502T160000
+SEQUENCE:1
+SUMMARY:Chocolatey, PowerShellGet und Paketverwaltung
+LOCATION:12+14
+DESCRIPTION:Wie verteilt man PowerShell Code optimal im Unternehmen? Rinon zeigt in diesem Workshop zunächst, wie sich eigene PowerShell-Module erstellen lassen. Anschließend lernen Sie das neue PowerShellGet kennen, mit dem sie eigene Modul-Verteilungsknoten im Unternehmen bereitstellen können - einschließlich Versionsverwaltung. Bei dieser Gelegenheit grenzt Rinon PowerShellGet von der allgemeinen Paketverwaltung 'Chocolatey' ab, über die PowerShell auch 'ganz normale' Anwendungsprogramme verteilen kann. Nehmen Sie in diesem Workshop zahlreiche Ideen mit, und bereiten Sie sich auf die Vorträge der Hauptkonferenz vor, die sich mit Team-Zusammenarbeit an PowerShell-Projekten beschäftigen.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:201704170T172345Z-AF23B2@psconf.eu
+DTSTAMP:201704170T172345
+DTSTART:20170503T080000
+DTEND:20170503T090000
+SEQUENCE:1
+SUMMARY:Registration
+LOCATION:Foyer Leibnitz Saal
+DESCRIPTION:Please bring photo ID and your registration/invoice ID to register and receive your delegate badge.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:201704170T172345Z-AF23B2@psconf.eu
+DTSTAMP:201704170T172345
+DTSTART:20170503T090000
+DTEND:20170503T093000
+SEQUENCE:1
+SUMMARY:Opening Ceremony
+LOCATION:Leibnitz Saal
+DESCRIPTION:Conference organizer Dr. Tobias Weltner kicks off the event and provides all delegates with last minute information and guidance.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:201704170T172345Z-AF23B2@psconf.eu
+DTSTAMP:201704170T172345
+DTSTART:20170503T093000
+DTEND:20170503T101500
+SEQUENCE:1
+SUMMARY:Keynote: State of the Union
+LOCATION:Leibnitz Saal
+DESCRIPTION:PowerShell inventor and Technical Fellow Jeffrey Snover gives an overview where the PowerShell ecosystem stands and what to expect next
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:201704170T172345Z-AF23B2@psconf.eu
+DTSTAMP:201704170T172345
+DTSTART:20170503T101500
+DTEND:20170503T103000
+SEQUENCE:1
+SUMMARY:Coffee Break
+LOCATION:Leibnitz Saal
+DESCRIPTION:Enjoy coffee, tea, or cold drinks, and have a chat with friends and colleagues
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:201704170T172345Z-AF23B2@psconf.eu
+DTSTAMP:201704170T172345
+DTSTART:20170503T103000
+DTEND:20170503T111500
+SEQUENCE:1
+SUMMARY:PowerShell Warm-Up: Quiz & Quirks
+LOCATION:Leibnitz Saal
+DESCRIPTION:Start the day with an interactive code review session where we look at really stupid questions asked by true PowerShell experts. Would you have been able to solve these puzzles?
 BEGIN:VALARM
 TRIGGER:-PT15M
 ACTION:DISPLAY
