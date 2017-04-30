@@ -42,28 +42,22 @@ function ConvertTo-Ics
         [string]
         $Description,
 
-        # Description of event
-        [Parameter(Mandatory=$true)]
-        [string]
-        $OutputPath,
-
         # Reminder Number of minutes
         [Parameter(Mandatory=$false)]
         [int]
         $Reminder
     )
 
-    $Time = "{0:yyyyMMddTHHmmss}" -f $testtime
-    $DTStart = "{0:yyyyMMddTHHmmss}" -f $DTStart
-    $DTEnd = "{0:yyyyMMddTHHmmss}" -f $DTEnd
-
+    Begin
+    {
+        $DTBegin = "{0:yyyyMMddTHHmmss}" -f $DTStart
 "BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//PowerShell/handcal//NONSGML v1.0//EN
 BEGIN:VTIMEZONE
 TZID:Romance Standard Time
 BEGIN:STANDARD
-DTSTART:$DTStart
+DTSTART:$DTBegin
 RRULE:FREQ=YEARLY;BYDAY=-1SU;BYMONTH=10
 TZOFFSETFROM:+0200
 TZOFFSETTO:+0100
@@ -73,7 +67,13 @@ DTSTART:16010325T020000
 RRULE:FREQ=YEARLY;BYDAY=-1SU;BYMONTH=3
 TZOFFSETFROM:+0100
 TZOFFSETTO:+0200
-END:DAYLIGHT" | Out-File -FilePath $OutputPath -Append -Encoding default
+END:DAYLIGHT" | Write-Output
+    }
+    Process
+    {
+
+        $DTStart = "{0:yyyyMMddTHHmmss}" -f $DTStartT
+        $DTEnd = "{0:yyyyMMddTHHmmss}" -f $DTEnd
 
 "BEGIN:VEVENT
 UID:201704170T172345Z-AF23B2@psconf.eu
@@ -89,10 +89,14 @@ TRIGGER:-PT15M
 ACTION:DISPLAY
 DESCRIPTION:Reminder
 END:VALARM
-END:VEVENT" | Out-File -FilePath $OutputPath -Append -Encoding default
+END:VEVENT" | Write-Output
 
 
-"END:VCALENDAR" | Out-File -FilePath $OutputPath -Append -Encoding default
+    }
+    End
+    {
+        "END:VCALENDAR" | Write-Output
+    }
 
 
 }
