@@ -1,4 +1,3 @@
-# Jonas 
 function ConvertTo-Ics 
 {
     [CmdletBinding(DefaultParameterSetName='Parameter Set 1', 
