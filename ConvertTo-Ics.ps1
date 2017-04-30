@@ -72,7 +72,7 @@ END:DAYLIGHT" | Write-Output
     Process
     {
 
-        $DTStart = "{0:yyyyMMddTHHmmss}" -f $DTStartT
+        $DTStart = "{0:yyyyMMddTHHmmss}" -f $DTStart
         $DTEnd = "{0:yyyyMMddTHHmmss}" -f $DTEnd
 
 "BEGIN:VEVENT
