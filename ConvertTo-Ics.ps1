@@ -37,7 +37,7 @@ function ConvertTo-Ics
         $Location,
 
         # Description of event
-        [Parameter(Mandatory=$true,
+        [Parameter(Mandatory=$false,
                    ValueFromPipelineByPropertyName=$true)]       
         [string]
         $Description,
@@ -72,7 +72,7 @@ DTEND:$DTEnd
 SEQUENCE:1
 SUMMARY:$Summary
 LOCATION:$Location
-DESCRIPTION:$Description
+DESCRIPTION:$Description  
 BEGIN:VALARM
 TRIGGER:-PT15M
 ACTION:DISPLAY
