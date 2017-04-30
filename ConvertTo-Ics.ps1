@@ -50,7 +50,6 @@ function ConvertTo-Ics
 
     Begin
     {
-        $DTBegin = "{0:yyyyMMddTHHmmss}" -f $DTStart
 @"
 BEGIN:VCALENDAR
 VERSION:2.0
