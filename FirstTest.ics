@@ -1,10 +1,10 @@
-BEGIN:VCALENDAR
+﻿BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//PowerShell/handcal//NONSGML v1.0//EN
 BEGIN:VTIMEZONE
 TZID:Romance Standard Time
 BEGIN:STANDARD
-DTSTART:20170505T161500
+DTSTART:
 RRULE:FREQ=YEARLY;BYDAY=-1SU;BYMONTH=10
 TZOFFSETFROM:+0200
 TZOFFSETTO:+0100
@@ -18,12 +18,42 @@ END:DAYLIGHT
 BEGIN:VEVENT
 UID:201704170T172345Z-AF23B2@psconf.eu
 DTSTAMP:201704170T172345Z
-DTSTART:20170505T161500
-DTEND:20170505T163000
+DTSTART:
+DTEND:20170502T090000
 SEQUENCE:1
-SUMMARY:Last Coffee Break and Conference End
+SUMMARY:Preconf Registration
 LOCATION:Workshop Area
-DESCRIPTION:Meet a last time, have a final zip of coffee. Conference is about to end. Have a safe trip home, and hopefully see you next year!
+DESCRIPTION:We meet in the main workshop area where you get coffee and can register. This day is open for delegates who registered for the preconference day. It is not open for anyone else.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:201704170T172345Z-AF23B2@psconf.eu
+DTSTAMP:201704170T172345Z
+DTSTART:
+DTEND:20170502T120000
+SEQUENCE:1
+SUMMARY:DSC Introduction
+LOCATION:24+26
+DESCRIPTION:If you are new to DSC (Desired State Configuration) and would like to get up to speed, Ben introduces you to the core concepts, demos the concepts behind DSC, and provides all the information you need to follow the DSC tracks in the main conference.
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:201704170T172345Z-AF23B2@psconf.eu
+DTSTAMP:201704170T172345Z
+DTSTART:
+DTEND:20170502T120000
+SEQUENCE:1
+SUMMARY:PowerShell Remoting
+LOCATION:11+13
+DESCRIPTION:In this workshop, Aleksandar reviews the different ways of how to access remote systems via PowerShell. He'll be talking about PowerShell Remoting and its prerequisites, PowerShell Direct, and also PowerShell over SSH. This workshop helps you evaluate the different options of remote communications, polishes your fundamental knowledge, and brings you up to speed for cross-platform remote communications in the light of 'PowerShell on Linux'.
 BEGIN:VALARM
 TRIGGER:-PT15M
 ACTION:DISPLAY
