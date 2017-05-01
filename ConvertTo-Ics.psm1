@@ -1,10 +1,7 @@
 function ConvertTo-Ics 
 {
-    [CmdletBinding(DefaultParameterSetName='Parameter Set 1', 
-                  SupportsShouldProcess=$true, 
-                  PositionalBinding=$false,
-                  ConfirmImpact='Medium')]
-
+    [CmdletBinding(PositionalBinding=$false,
+                  ConfirmImpact='Low')]
     Param
     (
         # Start Time of event
