@@ -14,6 +14,10 @@
    (iwr powershell.love -UseB).Content.SubString(1) | ConvertFrom-Json | %{$_} | ogv -PassThru | ConvertTo-Ics | Set-Content -Path Test.ics -Encoding Default
 
    Display agenda in Out-GridView and convert selected events to Test.ics
+.EXAMPLE
+   (iwr powershell.love -UseB).Content.SubString(1) | ConvertFrom-Json | %{$_} | ogv -PassThru | ConvertTo-Ics -Reminder 12 | Set-Content -Path Test.ics -Encoding Default
+
+   Same as previous example. But with 12 min reminder enabled on all events.
 .NOTES
    This function was written in a hurry and dosn't comply 100% with https://icalendar.org/validator.html
 
@@ -82,6 +86,14 @@ PRODID:-//PowerShell/handcal//NONSGML v1.0//EN
 
         $DTStart = "{0:yyyyMMddTHHmmss}" -f $DTStart
         $DTEnd = "{0:yyyyMMddTHHmmss}" -f $DTEnd
+        if($Reminder) {
+            $Alarm = '
+BEGIN:VALARM
+TRIGGER:-PT{0}M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM' -f $Reminder
+        }
 
 @"
 BEGIN:VEVENT
@@ -92,12 +104,7 @@ DTEND:$DTEnd
 SEQUENCE:1
 SUMMARY:$Summary
 LOCATION:$Location
-DESCRIPTION:$Description  
-BEGIN:VALARM
-TRIGGER:-PT15M
-ACTION:DISPLAY
-DESCRIPTION:Reminder
-END:VALARM
+DESCRIPTION:$Description $Alarm
 END:VEVENT
 "@ | Write-Output
 
