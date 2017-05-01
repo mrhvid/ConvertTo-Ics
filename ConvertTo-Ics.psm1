@@ -7,11 +7,11 @@
    (iwr powershell.love -UseB).Content.SubString(1) | ConvertFrom-Json | %{$_}  
    and converts the output to a .ics file that can be used by e.g. Outlook. 
 .EXAMPLE
-   (iwr powershell.love -UseB).Content.SubString(1) | ConvertFrom-Json | %{$_} | ConvertTo-Ics | Set-Content -Path Test.ics
+   (iwr powershell.love -UseB).Content.SubString(1) | ConvertFrom-Json | %{$_} | ConvertTo-Ics | Set-Content -Path Test.ics -Encoding Default
 
    Convert full Agenda to .ics
 .EXAMPLE
-   (iwr powershell.love -UseB).Content.SubString(1) | ConvertFrom-Json | %{$_} | ogv -PassThru | ConvertTo-Ics | Set-Content -Path Test.ics
+   (iwr powershell.love -UseB).Content.SubString(1) | ConvertFrom-Json | %{$_} | ogv -PassThru | ConvertTo-Ics | Set-Content -Path Test.ics -Encoding Default
 
    Display agenda in Out-GridView and convert selected events to Test.ics
 .NOTES
