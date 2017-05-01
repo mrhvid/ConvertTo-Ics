@@ -17,6 +17,11 @@
 .NOTES
    This function was written in a hurry and dosn't comply 100% with https://icalendar.org/validator.html
 
+   The GitHub repository is located here https://github.com/mrhvid/PSConfEU_ConvertTo-Ics
+   Ideeas are apreciated. (I intend to update the module to be more general after the conference)
+
+   - Jonas Sommer Nielsen
+
 #>
 function ConvertTo-Ics 
 {
