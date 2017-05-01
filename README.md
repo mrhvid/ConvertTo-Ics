@@ -1,11 +1,12 @@
 # PSConfEU_ConvertTo-Ics
 
-Inspired by [link](http://www.powertheshell.com/agendacompetition/)
+Inspired by [PSConf EU 2017 Agenda Competition](http://www.powertheshell.com/agendacompetition/)
 
 ## Installation
 `Find-Module ConvertTo-Ics | Install-Module`
 
 (Works out of box with PowerShell 5.0 e.g. Windows 10)
+You can find the module on the  [PowerShell Gallery](https://www.powershellgallery.com/packages/ConvertTo-Ics)
 
 
 ## Examples 
