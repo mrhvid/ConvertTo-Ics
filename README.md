@@ -16,8 +16,8 @@ You can find the module on the  [PowerShell Gallery](https://www.powershellgalle
 ### Output first 3 events
 `PS C:\temp> (iwr powershell.love -UseB).Content.SubString(1) | ConvertFrom-Json | %{$_} | select -First 3 | ConvertTo-Ics | Set-Content -Path c:\temp\SecondTest.ics -Encoding Default`
 
-### Output All events
-`PS C:\temp> (iwr powershell.love -UseB).Content.SubString(1) | ConvertFrom-Json | %{$_} | ConvertTo-Ics | Set-Content -Path c:\temp\ThirdTest.ics -Encoding Default`
+### Output All events 13 min reminder
+`PS C:\temp> (iwr powershell.love -UseB).Content.SubString(1) | ConvertFrom-Json | %{$_} | ConvertTo-Ics -Reminder 13 | Set-Content -Path c:\temp\ThirdTest.ics -Encoding Default`
 
 Outputs all events to ThirdTest.ics
 
