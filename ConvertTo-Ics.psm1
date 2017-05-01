@@ -1,3 +1,23 @@
+<#
+.Synopsis
+   Convert PSConf.EU 2017 Agenda to .ics format
+.DESCRIPTION
+   This module was created for the http://www.powertheshell.com/agendacompetition/ 
+   It pulls down the json file at powershell.love using the oneliner 
+   (iwr powershell.love -UseB).Content.SubString(1) | ConvertFrom-Json | %{$_}  
+   and converts the output to a .ics file that can be used by e.g. Outlook. 
+.EXAMPLE
+   (iwr powershell.love -UseB).Content.SubString(1) | ConvertFrom-Json | %{$_} | ConvertTo-Ics | Set-Content -Path Test.ics
+
+   Convert full Agenda to .ics
+.EXAMPLE
+   (iwr powershell.love -UseB).Content.SubString(1) | ConvertFrom-Json | %{$_} | ogv -PassThru | ConvertTo-Ics | Set-Content -Path Test.ics
+
+   Display agenda in Out-GridView and convert selected events to Test.ics
+.NOTES
+   This function was written in a hurry and dosn't comply 100% with https://icalendar.org/validator.html
+
+#>
 function ConvertTo-Ics 
 {
     [CmdletBinding(PositionalBinding=$false,
