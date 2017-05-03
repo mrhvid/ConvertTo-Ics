@@ -61,6 +61,12 @@ function ConvertTo-Ics
         [string]
         $Location,
 
+        # Speakers
+        [Parameter(Mandatory=$false,
+                   ValueFromPipelineByPropertyName=$true)]
+        [string]
+        $SpeakerList,
+
         # Description of event
         [Parameter(Mandatory=$false,
                    ValueFromPipelineByPropertyName=$true)]       
@@ -102,7 +108,7 @@ DTSTAMP:201704170T172345
 DTSTART:$DTStart
 DTEND:$DTEnd
 SEQUENCE:1
-SUMMARY:$Summary
+SUMMARY:$Summary - $SpeakerList
 LOCATION:$Location
 DESCRIPTION:$Description $Alarm
 END:VEVENT
