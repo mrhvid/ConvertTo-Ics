@@ -89,18 +89,22 @@ PRODID:-//PowerShell/handcal//NONSGML v1.0//EN
     }
     Process
     {
-
-        function Insert-CRLFSpace ([String]$Text) {
-        $x = $text.Length
-        while($x -gt 0) {
-            $text = $text.Insert($x, "`n ")
-            $x = $x - 60
-        }
-        $text
+        function Add-LineFold ([String]$Text) {
+            # Simpel implementation to comply with https://icalendar.org/iCalendar-RFC-5545/3-1-content-lines.html
+            $x = $text.Length
+            while($x -gt 0) {
+                $text = $text.Insert($x, "`n ")
+                $x = $x - 60
+            }
+            $text
         }
 
         $DTStart = "{0:yyyyMMddTHHmmss}" -f $DTStart
         $DTEnd = "{0:yyyyMMddTHHmmss}" -f $DTEnd
+        $Summary = Add-LineFold -Text $Summary
+        $SpeakerList = Add-LineFold -Text $SpeakerList
+        $Location = Add-LineFold -Text $Location
+        $Description = Add-LineFold -Text $Description
         if($Reminder) {
             $Alarm = '
 BEGIN:VALARM
