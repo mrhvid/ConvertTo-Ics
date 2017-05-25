@@ -90,6 +90,15 @@ PRODID:-//PowerShell/handcal//NONSGML v1.0//EN
     Process
     {
 
+        function Insert-CRLFSpace ([String]$Text) {
+        $x = $text.Length
+        while($x -gt 0) {
+            $text = $text.Insert($x, "`n ")
+            $x = $x - 60
+        }
+        $text
+        }
+
         $DTStart = "{0:yyyyMMddTHHmmss}" -f $DTStart
         $DTEnd = "{0:yyyyMMddTHHmmss}" -f $DTEnd
         if($Reminder) {
