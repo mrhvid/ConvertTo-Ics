@@ -91,7 +91,7 @@ PRODID:-//PowerShell/handcal//NONSGML v1.0//EN
     {
         function Add-LineFold ([String]$Text) {
             # Simpel implementation to comply with https://icalendar.org/iCalendar-RFC-5545/3-1-content-lines.html
-            $x = $text.Length
+            $x = $text.Length - ($test.length % 60)
             while($x -gt 0) {
                 $text = $text.Insert($x, "`n ")
                 $x = $x - 60
@@ -101,10 +101,10 @@ PRODID:-//PowerShell/handcal//NONSGML v1.0//EN
 
         $DTStart = "{0:yyyyMMddTHHmmss}" -f $DTStart
         $DTEnd = "{0:yyyyMMddTHHmmss}" -f $DTEnd
-        $Summary = Add-LineFold -Text $Summary
+        $Summary = Add-LineFold -Text "SUMMARY:$Summary - $SpeakerList"
         $SpeakerList = Add-LineFold -Text $SpeakerList
         $Location = Add-LineFold -Text $Location
-        $Description = Add-LineFold -Text $Description
+        $Description = Add-LineFold -Text "DESCRIPTION:$Description"
         if($Reminder) {
             $Alarm = '
 BEGIN:VALARM
@@ -121,9 +121,9 @@ DTSTAMP:201704170T172345
 DTSTART:$DTStart
 DTEND:$DTEnd
 SEQUENCE:1
-SUMMARY:$Summary - $SpeakerList
+$Summary
 LOCATION:$Location
-DESCRIPTION:$Description $Alarm
+$Description $Alarm
 END:VEVENT
 "@ | Write-Output
 
