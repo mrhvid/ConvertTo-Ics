@@ -103,10 +103,12 @@ PRODID:-//PowerShell/handcal//NONSGML v1.0//EN
         $DTEnd = "{0:yyyyMMddTHHmmss}" -f $DTEnd
         $Summary = Add-LineFold -Text "SUMMARY:$Summary - $SpeakerList"
         $SpeakerList = Add-LineFold -Text $SpeakerList
-        $Location = Add-LineFold -Text $Location
+        $Location = Add-LineFold -Text "LOCATION:$Location"
+        $Description = $Description.Replace('`n', '\n')  # Not working https://stackoverflow.com/questions/666929/encoding-newlines-in-ical-files
         $Description = Add-LineFold -Text "DESCRIPTION:$Description"
         if($Reminder) {
-            $Alarm = 'BEGIN:VALARM
+            $Alarm = '
+BEGIN:VALARM
 TRIGGER:-PT{0}M
 ACTION:DISPLAY
 DESCRIPTION:Reminder
@@ -121,9 +123,8 @@ DTSTART:$DTStart
 DTEND:$DTEnd
 SEQUENCE:1
 $Summary
-LOCATION:$Location
-$Description 
-$Alarm
+$Location
+$Description $Alarm
 END:VEVENT
 "@ | Write-Output
 
