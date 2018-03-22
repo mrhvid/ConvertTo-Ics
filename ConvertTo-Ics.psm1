@@ -11,7 +11,7 @@
 
    Convert full Agenda to .ics
 .EXAMPLE
-   (iwr powershell.love -UseB).Content.SubString(1) | ConvertFrom-Json | %{$_} | ogv -PassThru | ConvertTo-Ics | Set-Content -Path Test.ics -Encoding Default
+   (iwr powershell.beer -UseB).Content.SubString(1) | ConvertFrom-Json | %{$_} | ogv -PassThru | ConvertTo-Ics | Set-Content -Path Test.ics -Encoding Default
 
    Display agenda in Out-GridView and convert selected events to Test.ics
 .EXAMPLE
@@ -57,19 +57,21 @@ function ConvertTo-Ics
         # Location of event
         [Parameter(Mandatory=$true,
                    ValueFromPipelineByPropertyName=$true)]
-        [Alias("Room")]
+        [Alias("Room","Track")]
         [string]
         $Location,
 
         # Speakers
         [Parameter(Mandatory=$false,
                    ValueFromPipelineByPropertyName=$true)]
+        [Alias("Speaker")]
         [string]
         $SpeakerList,
 
         # Description of event
         [Parameter(Mandatory=$false,
-                   ValueFromPipelineByPropertyName=$true)]       
+                   ValueFromPipelineByPropertyName=$true)]
+        [Alias("abstract")]
         [string]
         $Description,
 
