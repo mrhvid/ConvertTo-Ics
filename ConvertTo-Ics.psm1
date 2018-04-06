@@ -109,10 +109,10 @@ PRODID:-//PowerShell/handcal//NONSGML v1.0//EN
             $text
         }
 
-        $DTStart = "{0:yyyyMMddTHHmmss}" -f $DTStart
         if($Duration) {
             $DTEnd = $DTStart.AddMinutes($Duration)  
         }
+        $DTStart = "{0:yyyyMMddTHHmmss}" -f $DTStart
         $DTEnd = "{0:yyyyMMddTHHmmss}" -f $DTEnd
         $Summary = Add-LineFold -Text "SUMMARY:$Summary - $SpeakerList"
         $SpeakerList = Add-LineFold -Text $SpeakerList
