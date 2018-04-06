@@ -41,11 +41,19 @@ function ConvertTo-Ics
         $DTStart,
 
         # End Time of event
-        [Parameter(Mandatory=$true,
+        [Parameter(ParameterSetName='EndTime',
+                   Mandatory=$true,
                    ValueFromPipelineByPropertyName=$true)]
         [Alias("EndTime")]
         [datetime]
         $DTEnd,
+
+        # Duration (event duration in minutes)
+        [Parameter(ParameterSetName='Duration',
+                   Mandatory=$true,
+                   ValueFromPipelineByPropertyName=$true)]
+        [int]
+        $Duration,
 
         # Summary / subject of event
         [Parameter(Mandatory=$true,
