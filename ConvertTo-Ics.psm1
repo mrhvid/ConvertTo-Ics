@@ -112,8 +112,8 @@ PRODID:-//PowerShell/handcal//NONSGML v1.0//EN
         if($Duration) {
             $DTEnd = $DTStart.AddMinutes($Duration)  
         }
-        $DTStart = "{0:yyyyMMddTHHmmss}" -f $DTStart
-        $DTEnd = "{0:yyyyMMddTHHmmss}" -f $DTEnd
+        $Start = "{0:yyyyMMddTHHmmss}" -f $DTStart
+        $End = "{0:yyyyMMddTHHmmss}" -f $DTEnd
         $Summary = Add-LineFold -Text "SUMMARY:$Summary - $SpeakerList"
         $SpeakerList = Add-LineFold -Text $SpeakerList
         $Location = Add-LineFold -Text "LOCATION:$Location"
@@ -132,8 +132,8 @@ END:VALARM' -f $Reminder
 BEGIN:VEVENT
 UID:201704170T172345Z-AF23B2@psconf.eu
 DTSTAMP:201704170T172345
-DTSTART:$DTStart
-DTEND:$DTEnd
+DTSTART:$Start
+DTEND:$End
 SEQUENCE:1
 $Summary
 $Location
