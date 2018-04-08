@@ -6,22 +6,35 @@
    It pulls down the json file at powershell.love using the oneliner 
    (iwr powershell.love -UseB).Content.SubString(1) | ConvertFrom-Json | %{$_}  
    and converts the output to a .ics file that can be used by e.g. Outlook. 
-.EXAMPLE
-   (iwr powershell.love -UseB).Content.SubString(1) | ConvertFrom-Json | %{$_} | ConvertTo-Ics | Set-Content -Path Test.ics -Encoding Default
 
-   Convert full Agenda to .ics
 .EXAMPLE
-   (iwr powershell.beer -UseB).Content.SubString(1) | ConvertFrom-Json | %{$_} | ogv -PassThru | ConvertTo-Ics | Set-Content -Path Test.ics -Encoding Default
+    $(IRM powershell.beer -UseB) | ConvertTo-ics
 
-   Display agenda in Out-GridView and convert selected events to Test.ics
+    Convert the .json file and output to terminal
 .EXAMPLE
-   (iwr powershell.love -UseB).Content.SubString(1) | ConvertFrom-Json | %{$_} | ogv -PassThru | ConvertTo-Ics -Reminder 12 | Set-Content -Path Test.ics -Encoding Default
+    $(IRM powershell.beer -UseB) | ConvertTo-ics -Reminder 12 
 
-   Same as previous example. But with 12 min reminder enabled on all events.
+    Convert the .json file and output to terminal add a 12 min reminder to all events. 
+.EXAMPLE
+    $(IRM powershell.beer -UseB) | ConvertTo-ics | Set-Content -Path Test.ics -Encoding Default
+
+    Convert the .json file and save to Test.ics
+.EXAMPLE
+    $(IRM powershell.beer -UseB) | ogv -PassThru | ConvertTo-ics
+
+    Use Out-GridView to filter what events to convert
+.EXAMPLE
+    $(IRM powershell.beer -UseB) | ogv -PassThru | ConvertTo-ics | Set-Content -Path Test.ics -Encoding Default
+
+    Use Out-GridView to filter what events to convert save to Test.ics
+.EXAMPLE
+    $(IRM powershell.beer -UseB) | Where Category -Like '*pester*' | ConvertTo-ics
+
+    Filter by Category all containing "pester" and convert
 .NOTES
    This function was written in a hurry and dosn't comply 100% with https://icalendar.org/validator.html
 
-   The GitHub repository is located here https://github.com/mrhvid/PSConfEU_ConvertTo-Ics
+   The GitHub repository is located here https://github.com/mrhvid/ConvertTo-Ics
    Ideeas are apreciated. (I intend to update the module to be more general after the conference)
 
    - Jonas Sommer Nielsen
