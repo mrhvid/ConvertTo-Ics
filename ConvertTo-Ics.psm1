@@ -116,7 +116,7 @@ PRODID:-//PowerShell/handcal//NONSGML v1.0//EN
             # Simpel implementation to comply with https://icalendar.org/iCalendar-RFC-5545/3-1-content-lines.html
             $x = 60
             while($x -lt $text.Length) {
-                $text = $text.Insert($x, "@@`n ")
+                $text = $text.Insert($x, "`n ")
                 $x = $x + 60
             }
             $text
