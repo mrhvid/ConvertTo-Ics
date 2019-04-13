@@ -44,7 +44,6 @@ function ConvertTo-Ics
 {
     [CmdletBinding(PositionalBinding=$false,
                   ConfirmImpact='Low')]
-    # TODO Check what parameters are in the new format on 
     Param
     (
         # Start Time of event
@@ -70,14 +69,14 @@ function ConvertTo-Ics
         $Duration,
 
         # Summary / subject of event
-        [Parameter(Mandatory=$true,
+        [Parameter(Mandatory=$false,
                    ValueFromPipelineByPropertyName=$true)]
         [Alias("Title",'Name')]
         [string]
         $Summary,
 
         # Location of event
-        [Parameter(Mandatory=$true,
+        [Parameter(Mandatory=$false,
                    ValueFromPipelineByPropertyName=$true)]
         [Alias("Room","Track")]
         [string]
