@@ -10,7 +10,13 @@ You can find the module on the  [PowerShell Gallery](https://www.powershellgalle
 
 
 ## Examples 
-### Output selected events (select and click OK bottom right)
+
+### Oneliner Install module, save all tracks to desktop (2019)
+`inmo ConvertTo-Ics -Sc CurrentUser -Force;$(irm powershell.fun -UseB)| Where Name -NE "" |Group Track|%{$_.group|ConvertTo-Ics|Set-Content "$home\Desktop\PSConf$($_.name).ics" -Encoding Default};explorer "/select,$home\Desktop\PSConf$($_.name).ics"`
+
+
+## Last years version. I haven't tested with 2019 data. 
+### Output selected events (select and click OK bottom right) 
 `PS C:\temp> (iwr powershell.love -UseB).Content.SubString(1) | ConvertFrom-Json | %{$_} | ogv -PassThru | ConvertTo-Ics | Set-Content -Path c:\temp\FirstTest.ics -Encoding Default`
 
 ### Output first 3 events
@@ -22,8 +28,5 @@ You can find the module on the  [PowerShell Gallery](https://www.powershellgalle
 Outputs all events to ThirdTest.ics
 
 It's testing and not 100% complient with https://icalendar.org/validator.html But Outlook seems to be ok with the .ics created. 
-
-
-
 
 Ideas are more than welcome :) 
