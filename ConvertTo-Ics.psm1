@@ -96,6 +96,13 @@ function ConvertTo-Ics
         [string]
         $Description,
 
+        # Description of event
+        [Parameter(Mandatory=$false,
+                    ValueFromPipelineByPropertyName=$true)]
+        [Alias("ID")]
+        [string]
+        $UID = '201704170T172345Z-AF23B2@psconf.eu',
+
         # Reminder Number of minutes
         [Parameter(Mandatory=$false)]
         [int]
@@ -143,7 +150,7 @@ END:VALARM' -f $Reminder
 
 @"
 BEGIN:VEVENT
-UID:201704170T172345Z-AF23B2@psconf.eu
+UID:$UID
 DTSTAMP:201704170T172345
 DTSTART:$Start
 DTEND:$End
