@@ -69,7 +69,7 @@ function ConvertTo-Ics
         $Duration,
 
         # Summary / subject of event
-        [Parameter(Mandatory=$false,
+        [Parameter(Mandatory=$true,
                    ValueFromPipelineByPropertyName=$true)]
         [Alias("Title",'Name')]
         [string]
