@@ -130,8 +130,9 @@ PRODID:-//PowerShell/handcal//NONSGML v1.0//EN
         }
 
         if(!$PSBoundParameters.ContainsKey('UID')) {
+            $NonAlfabeticChars = '\W'
             # UID of event - Global uniqui identifier see: 5.3.  UID Property in https://tools.ietf.org/rfc/rfc7986.txt (This is a bad test implementation)
-            $UID = Add-LineFold -Text ($Summary.Replace(' ','') + '@psconf.eu')
+            $UID = Add-LineFold -Text ($Summary -Replace($NonAlfabeticChars,'') + '@psconf.eu')
         }
 
         if($Duration) {
