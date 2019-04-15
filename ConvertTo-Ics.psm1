@@ -119,13 +119,6 @@ PRODID:-//PowerShell/handcal//NONSGML v1.0//EN
     }
     Process
     {
-        if($PSBoundParameters.ContainsKey('UID')) {
-
-        } else {
-            # UID of event - Global uniqui identifier see: 5.3.  UID Property in https://tools.ietf.org/rfc/rfc7986.txt (This is a bad test implementation)
-            $UID = $Summary.Replace(' ','') + '@psconf.eu'
-        }
-        
         function Add-LineFold ([String]$Text) {
             # Simpel implementation to comply with https://icalendar.org/iCalendar-RFC-5545/3-1-content-lines.html
             $x = 60
@@ -134,6 +127,11 @@ PRODID:-//PowerShell/handcal//NONSGML v1.0//EN
                 $x = $x + 60
             }
             $text
+        }
+
+        if(!$PSBoundParameters.ContainsKey('UID')) {
+            # UID of event - Global uniqui identifier see: 5.3.  UID Property in https://tools.ietf.org/rfc/rfc7986.txt (This is a bad test implementation)
+            $UID = Add-LineFold -Text ($Summary.Replace(' ','') + '@psconf.eu')
         }
 
         if($Duration) {
