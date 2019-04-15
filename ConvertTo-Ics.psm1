@@ -96,12 +96,12 @@ function ConvertTo-Ics
         [string]
         $Description,
 
-        # Description of event
+        # UID of event - Global uniqui identifier see: 5.3.  UID Property in https://tools.ietf.org/rfc/rfc7986.txt (This is a bad test implementation)
         [Parameter(Mandatory=$false,
                     ValueFromPipelineByPropertyName=$true)]
         [Alias("ID")]
         [string]
-        $UID = '201704170T172345Z-AF23B2@psconf.eu',
+        $UID = $null,
 
         # Reminder Number of minutes
         [Parameter(Mandatory=$false)]
@@ -119,6 +119,13 @@ PRODID:-//PowerShell/handcal//NONSGML v1.0//EN
     }
     Process
     {
+        if($PSBoundParameters.ContainsKey('UID')) {
+
+        } else {
+            # UID of event - Global uniqui identifier see: 5.3.  UID Property in https://tools.ietf.org/rfc/rfc7986.txt (This is a bad test implementation)
+            $UID = $Summary.Replace(' ','') + '@psconf.eu'
+        }
+        
         function Add-LineFold ([String]$Text) {
             # Simpel implementation to comply with https://icalendar.org/iCalendar-RFC-5545/3-1-content-lines.html
             $x = 60
